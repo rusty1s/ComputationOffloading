@@ -71,7 +71,7 @@
 Die Popularität von Smartphones und dessen Applikationen ist innerhalb der letzten Jahre stark gestiegen.
 Aber so sehr der App-Markt explodiert und immer komplexer werdende Programme wie Objekterkennung oder Videobearbeitung auf Smartphones zur Verfügung stehen, so unglücklicher werden Benutzer mit der Akkulaufzeit dieser.
 Energieeffizienz ist daher ein wichtiges Thema bei der Entwicklung von benutzerfreundlichen mobilen Applikationen.
-Computation Offloading, d.h. die Auslagerung von komplexen Berechnungen an leistungsstärkere Computer, ist ein möglicher Anwärter für die Erstellung energieeffizienterer Applikationen.
+Computation Offloading, das heißt die Auslagerung von komplexen Berechnungen an leistungsstärkere Computer, ist ein möglicher Anwärter für die Erstellung energieeffizienterer Applikationen.
 
 Diese Arbeit beleuchtet das Computation Offloading und zeigt den aktuellen Stand dessen in der Forschung auf.
 Neben der Grundidee des Computation Offloadings und der Vorstellung bisheriger Arbeiten auf diesem Gebiet, beschäftigt sich diese Arbeit vor allem mit der Frage, ob Computation Offloading eine geeignete Möglichkeit darstellt, energieeffizientere Applikationen zu entwickeln.
@@ -87,7 +87,7 @@ Das App-Geschäft explodiert.
 So finden täglich neue innovative und revolutionäre Applikationen ihren Weg in die gegenwärtigen Smartphone Stores.
 Laut Forschung wächst die App-Industrie im Jahr 2015 exponentiell auf einen Marktwert von 37 Milliarden an~\$ \cite{e3-1}.
 
-Das Smartphone ist ebenso alltäglich geworden. Haben wir es nicht bei uns oder neigt sich der Akku dem Ende fühlen wir uns unverzüglich eingeschränkt in unseren Fähigkeiten.
+Das Smartphone ist ebenso alltäglich geworden. Haben wir es nicht bei uns oder neigt sich der Akku dem Ende, fühlen wir uns unverzüglich eingeschränkt in unseren Fähigkeiten.
 Das hat zur Folge, dass wir bei geringer Akkulaufzeit unseren Konsum ungewollt drosseln und unser Smartphone daher nicht zu vollem Potenzial nutzen können.
 Je mehr unsere Nachfrage nach komplexer werdenden Programmen auf Smartphones steigt, umso unglücklicher werden wir mit der Akkulaufzeit dieser.
 Eine Umfrage mit tausenden von Smartphone-Nutzern hat ergeben, dass die Verbesserung der Akkulaufzeit der größte Wunsch des Endnutzers ist~\cite{o13-6}.
@@ -123,7 +123,7 @@ Zum Abschluss wird ein Ausblick auf die Zukunft des Computation Offloadings gege
 Computation Offloading (oder \emph{cyber foraging} bzw. \emph{surrogate computing} \cite{o4}) ist die englische Bezeichnung für die Auslagerung von komplexen Aufgaben oder Berechnungen an leistungsstärkere Computer (zum Beispiel die Cloud) über Netzwerkübertragung.
 Dafür werden die entsprechenden Daten für die Berechnung vom Smartphone an den entsprechenden Offloading-Server gesendet.
 Das Smartphone wartet auf die Abarbeitung der Berechnung und empfängt nach Fertigstellung die berechneten Ergebnisse vom Server.
-Durch die Auslagerung verspricht man sich zum einen den Gewinn an Performance (d.h. die schnellere Abarbeitung der Aufgabe und die Nutzung der freigewordenen Ressourcen für andere Funktionen) und zum anderen die Einsparung von Energiekosten auf dem Smartphone.
+Durch die Auslagerung verspricht man sich zum einen den Gewinn an Performance (d.h. die schnellere Abarbeitung der Aufgabe und die Nutzung der freigewordenen Ressourcen für andere Anforderungen) und zum anderen die Einsparung von Energiekosten auf dem Smartphone.
 
 \begin{figure}
 \centering
@@ -131,16 +131,16 @@ Durch die Auslagerung verspricht man sich zum einen den Gewinn an Performance (d
   \caption{Architektur von Computation Offloading Systemen nach~\protect\cite{O13}}\label{fig:architektur}
 \end{figure}
 
-Die typische Architektur von Computation Offloading Systemen bestehend aus drei Hauptkomponenten (Profiler, Kostenmodell und Partitionierung) zeigt Abbildung~\ref{fig:architektur}.
+Die typische Architektur von Computation Offloading Systemen, bestehend aus drei Hauptkomponenten (Profiler, Kostenmodell und Partitionierung), zeigt Abbildung~\ref{fig:architektur}.
 
-\emph{Profiler} sammeln wertvolle Informationen wie CPU-Auslastung, Akkulaufzeit und Bandbreite über das Smartphone und dessen Netzwerkumgebung~\cite{O13}.
+\emph{Profiler} sammeln wertvolle Informationen über die CPU-Auslastung, Akkulaufzeit und Bandbreite des Smartphones und dessen Netzwerkumgebung~\cite{O13}.
 Sie sollen dabei möglichst genaue Angaben liefern und dabei so wenig Leistung wie möglich in Anspruch nehmen, um den zusätzlichen Mehraufwand der Applikation für das Computation Offloading gering zu halten~\cite{thinkair}.
 
 Die Schlüsselkomponente der Architektur ist das \emph{Kostenmodell}.
 Hier wird anhand von Kriterien und den Profiler-Informationen die Entscheidung getroffen, wann und welche Komponenten bzw. Methoden einer Applikation in die Cloud ausgelagert werden sollen.
 In der Abbildung werden die Kriterien \glqq minimiere Energie\grqq\ und \glqq maximiere Leistung\grqq\ genannt.
-Es sind aber ebenso auch andere Kriterien denkbar wie das Maximieren von Sicherheit und Datenschutz oder Robustheit der Applikation~\cite{O13}.
-Diese Arbeit beschäftigt sich im weiteren Verlauf aber nur mit der Einsparung von Energie als Kriterium.
+Es sind aber ebenso auch andere Kriterien denkbar wie das Maximieren von Sicherheit und Datenschutz oder der Robustheit der Applikation~\cite{O13}.
+Diese Arbeit beschäftigt sich im weiteren Verlauf nur mit der Einsparung von Energie als Kriterium.
 
 Die \emph{Partitionierung} teilt die Applikation anhand der Ergebnisse des Kostenmodells in zwei Bereiche: eine lokale Partition, die auf dem mobilen Endgerät ausgeführt wird und eine Partition, die in die Cloud ausgelagert wird~\cite{O13}.
 
@@ -151,7 +151,7 @@ Die Popularität der Cloud liegt unter anderem auch daran, dass sie relativ kost
 
 \subsection{Trade-off}
 
-Es ist wichtig anzumerken, dass Computation Offloading eine opportunistische Möglichkeit zur Erstellung von energieeffizienten Applikationen ist, aber keinesfalls eine Pflicht für zukünftige Programme darstellt.
+Es ist wichtig anzumerken, dass Computation Offloading eine opportunistische Möglichkeit zur Erstellung von energieeffizienten Applikationen ist, keinesfalls eine Pflicht für zukünftige Programme darstellt.
 Das liegt insbesondere an den zusätzlichen Energie- und Netzwerkkosten für die Datenübermittlung, die natürlich bei der Entscheidung für die Auslagerung bedacht werden müssen.~\cite{O13, o2}.
 Die Abwägung (engl. \emph{Trade-off}~\cite{o8}) zwischen dem Energieverbrauch zur Auslagerung der Aufgabe und der Energieeinsparung dank der Cloud entscheidet darüber, wann und ob Computation Offloading überhaupt sinnvoll ist.
 Dieser Trade-off lässt sich mathematisch wie folgt definieren~\cite{o8}: 
@@ -188,9 +188,7 @@ Diese Energien lassen sich erneut mit Hilfe der Beziehung zwischen Leistung und 
   \caption{Energiekosten eines Offloading-Prozesses nach~\protect\cite{O13}}\label{fig:trade-off}
 \end{figure}
 
-Abbildung~\ref{fig:trade-off} veranschaulicht den Energieverbrauch bei der Auslagerung der Berechnung und die davon abhängigen Variablen.
-
-Die Zeit des Wartens $T_w$ ist von der Aus\-füh\-rungs\-ge\-schwin\-dig\-keit der Cloud $X_{\textit{cloud}}$ abhängig.
+Abbildung~\ref{fig:trade-off} veranschaulicht den Energieverbrauch bei der Auslagerung der Berechnung und die davon abhängigen Variablen. Die Zeit des Wartens $T_w$ ist von der Aus\-füh\-rungs\-ge\-schwin\-dig\-keit der Cloud $X_{\textit{cloud}}$ abhängig.
 Ebenso lassen sich die Zeitintervalle zum Senden $T_s$ und Empfangen $T_e$ der Daten über die Menge der zu verschickenden und zu empfangenden Daten $D_s$, $D_e$ sowie die aktuellen Bandbreiten $B_s$, $B_e$ berechnen~\cite{o8}.
 Die Netzwerklatenzen seien hier mit in der Bandbreite berücksichtigt.
 Es ergibt sich damit:
@@ -216,13 +214,13 @@ Die Parameter $C$, $P_{\textit{lokal}}$, $P_w$, $X_{\textit{lokal}}$, $P_s$, $P_
  Ebenso können die zu versendenden Daten $D_s$ stark von der jeweiligen Anforderung abhängen.
  Ein statisches Computation Offloading System kann aber mittels Wahrscheinlichkeitsrechnung oder Fuzzy-Regelungen versuchen, auch diese Parameter vorherzusagen~\cite{o4}.
 
-Im Gegensatz dazu kann ein dynamisches Computation Offloading System auf verschiedene Umgebungsbeschaffenheiten während der Laufzeit reagieren, zum Beispiel bei schwankenden Netzwerkbandbreiten~\cite{o4}.
-Ein Profiler und ein Kostenmodell entscheiden dann während der Ausführung der Applikation darüber, ob es sich lohnt eine Berechnung auszulagern (vgl. Abbildung~\ref{fig:architektur}).
+Im Gegensatz dazu kann ein dynamisches Computation Offloading System auf Veränderungen in der Umgebung während der Laufzeit reagieren, zum Beispiel bei schwankenden Netzwerkbandbreiten~\cite{o4}.
+Ein Profiler und ein Kostenmodell entscheiden dann während der Ausführung der Applikation darüber, ob es sich lohnt, eine Berechnung auszulagern (vgl. Abbildung~\ref{fig:architektur}).
 Das hat den Nachteil, dass die Parameter zur Entscheidungsfindung über den gesamten Zeitraum der Applikation überwacht werden müssen.
 Die Überwachung dieser Parameter ist aber mittlerweile relativ kostengünstig, so dass sich der Mehraufwand dafür in Grenzen hält~\cite{thinkair}.
 Auf der anderen Seite sind der Profiler und das Kostenmodell auch im späteren Verlauf der Entwicklung oder nach der Veröffentlichung leicht erweiterbar bzw. anpassbar, um auch auf zukünftige Ansprüche schnell zu reagieren.
-Welche Bereiche einer Applikation potenziell ausgelagert werden wird auch in einem dynamischen System meistens statisch identifiziert.
-Eine Partitionierung während der Laufzeit stellt einen zu hohen, unerwünschten Mehraufwand für die Analysierung des Programms dar~\cite{o4}.
+Welche Bereiche einer Applikation potenziell ausgelagert werden, wird auch in einem dynamischen System meistens statisch identifiziert.
+Eine Partitionierung während der Laufzeit stellt einen zu hohen, unerwünschten Mehraufwand zur Analyse des Programms dar~\cite{o4}.
 Forschungsarbeiten, die sich mit Computation Offloading Systemen beschäftigen, erlebten im Laufe der Jahre einen Umbruch von statischen hinzu dynamischen Systemen~\cite{o4}.
 Das liegt unteranderem auch daran, dass dynamische Systeme weitaus automatisierter arbeiten und dem Entwickler damit eine Menge Arbeit abnehmen.
 
@@ -230,12 +228,13 @@ Das liegt unteranderem auch daran, dass dynamische Systeme weitaus automatisiert
 
 Es gibt eine unzählige Anzahl von Applikationen, die in verschiedener Art und Weise für Computation Offloading in Frage kommen.
 Generell ziehen Applikationen mit komplexen Methoden und wenig Datenaustausch den größten Nutzen aus der Auslagerung.
-Als Beispiel dafür sind zum Beispiel Texteditoren zu nennen, die eine geringe Menge von Daten $D_s$ verschicken und darauf beispielsweise eine Rechtschreibüberprüfung in der Cloud durchführen~\cite{o4}.
-Als weiteres Beispiel für wenig Datenaustausch sei hier eine Schach-KI zu nennen mit der Einschränkung, dass die Entscheidung zur Auslagerung zusätzlich von der Fähigkeit des Spielers abhängig ist.
-Um einen guten Spieler zu schlagen, muss die Künstlich Intelligenz eine Mehrzahl an Berechnungen durchführen und folglich wird Computation Offloading  gegen erfahrene Spieler profitabler~\cite{o4}. 
+Als Beispiel dafür sind zum Beispiel Texteditoren zu nennen, die eine geringe Menge von Daten $D_s$ (den Text) verschicken und darauf beispielsweise eine Rechtschreibüberprüfung in der Cloud ausführen~\cite{o4}.
+Als weiteres Beispiel für geringen Datenaustausch sei hier eine Schach-KI zu nennen.
+Ihre Entscheidung zur Auslagerung hängt zusätzlich von der Fähigkeitsstärke des Spielers zusammen.
+Um einen guten Spieler zu schlagen, muss die künstliche Intelligenz eine Mehrzahl an Berechnungen (steigende Komplexität) durchführen und folglich wird Computation Offloading  gegen erfahrene Spieler profitabler~\cite{o4}. 
 
-Applikationen wie Videobearbeitung oder Objekterkennung transferieren große Datenmengen zur Cloud und die Einsparung von Energie hängt damit größtenteils von der Bandweite $B_s$ ab.
-Bezieht man sich auf Videos oder Bilder im Internet (zum Beispiel YouTube), so ist Computation Offloading natürlich profitabler~\cite{o4}.
+Applikationen wie Videobearbeitung oder Objekterkennung transferieren große Datenmengen zur Cloud und die Einsparung von Energie hängt damit größtenteils von der Bandbreite $B_s$ ab.
+Bezieht man sich auf Videos oder Bilder im Internet (zum Beispiel YouTube), so ist Computation Offloading natürlich effizienter~\cite{o4}.
 
 Weitere Typen von Applikationen sind zum Beispiel Sprach\-er\-kenn\-ungs-~\cite{thinkair}, Augmented Reality-~\cite{O13} oder Da\-ten\-analyse-Programme für Gesundheit und Fitness~\cite{clonecloud} sowie Virusscanner~\cite{thinkair}.
 
@@ -244,7 +243,7 @@ Weitere Typen von Applikationen sind zum Beispiel Sprach\-er\-kenn\-ungs-~\cite{
 Der Energieverbrauch einer Applikation hängt stark davon ab, auf welchem System und auf welcher Hardware diese ausgeführt wird~\cite{seeds}.
 Eine vor kurzem erfolgte Studie zeigt auf, dass mehr als 10.000 mögliche Kombinationen bezüglich Hardware und Software für Android-Applikationen existieren~\cite{seeds-34}.
 Es gibt natürlich Kombinationen, die allgemein üblicher sind als andere, aber für Entwickler sind es dennoch zu viele, um diese zu berücksichtigen~\cite{seeds}.
-Es bietet sich demnach an, Systeme bzw. Frameworks zu benutzen, die einem diesen Entscheidungsprozess abnehmen.
+Es bietet sich demnach an, Systeme bzw. Frameworks zu nutzen, die einem diesen Entscheidungsprozess abnehmen.
 
 Es wurden über die Jahre eine Menge von Frameworks (hauptsächlich für Android-Systeme) vorgestellt, die dem Entwickler bei der Aufgabe des Computation Offloadings helfen~\cite{o4}.
 Neuere Systeme sind zum Beispiel \emph{ThinkAir}~\cite{thinkair}, \emph{MAUI}~\cite{maui}, \emph{CloneCloud}~\cite{clonecloud}, \emph{Cuckoo}~\cite{cuckoo}, \emph{MOCA}~\cite{moca} und \emph{SmartDiet}~\cite{smartdiet}.
@@ -254,7 +253,7 @@ MAUI unterstützt beispielsweise wie viele andere existierende Frameworks die Pa
 Methoden, die potenziell ausgelagert werden sollen, werden somit als solche gekennzeichnet.
 Allerdings berücksichtigt MAUI nicht die Möglichkeit zur Skalierierbarkeit der Cloud und verschenkt damit Potenzial~\cite{maui, thinkair}.
 
-CloneCloud migriert einen laufenden Thread im Smartphone zu einem bestimmten Zeitpunkt zu einem Applikationsklon in der Cloud~\cite{clonecloud}.
+CloneCloud hingegen migriert einen laufenden Thread im Smartphone zu einem bestimmten Zeitpunkt hinzuzu einem Applikationsklon in der Cloud~\cite{clonecloud}.
 Es bestimmt diesen Zeitpunkt mit Hilfe einer statischen Analyse.
 Die Threads werden auf dem Smartphone und in der Cloud unter verschiedenen Laufzeitbedingungen ausgeführt und analysiert~\cite{clonecloud}.
 CloneCloud bestimmt damit, welche Threads zu welchem Zeitpunkt und unter welchen Bedingungen in die Cloud ausgelagert werden sollen.
@@ -264,11 +263,11 @@ Außerdem muss die statische Analyse für jede neue Applikationsversion neu ausg
 ThinkAir bedient sich aus dem Besten der beiden oben genannten Frameworks~\cite{thinkair}.
 Dabei adressiert es die fehlende Skalierbarkeit von MAUI, in dem es je nach Auslastung dynamisch eine parallel laufende Anzahl von virtuellen Maschinen eines Smartphone-Klons in der Cloud erstellt oder zerstört~\cite{thinkair}.
 Im Gegensatz zu CloneCloud bietet ThinkAir die Auslagerung von Methoden anstatt von Threads und einen Profiler, der während der Ausführung Informationen zur Entscheidungsfindung liefert~\cite{thinkair}.
-ThinkAir ist damit ein dynamisches System und kann folglich schnell auf Veränderungen der Umgebung reagieren um stets die richtige Entscheidung zu treffen.
-Mittels eines einfachen Interfaces ist es für Entwickler einfach zu benutzen und mindert die Gefahr, dass Framework sinnwidrig zu benutzen.
+ThinkAir ist damit ein dynamisches System und kann folglich schnell auf Veränderungen der Umgebung reagieren.
+Mittels eines einfachen Interfaces ist es für Entwickler einfach zu benutzen und mindert damit gleichzeitig die Gefahr, dass Framework sinnwidrig zu benutzen.
 Im folgenden Verlauf des Kapitels soll das ThinkAir-Framework nach~\cite{thinkair} näher erläutert werden. 
 
-ThinkAir besteht aus drei wesentlichen Komponenten: Der Smartphone-Umgebung, dem Applikationsserver und den Profilern.
+ThinkAir besteht aus drei wesentlichen Komponenten: der Smartphone-Umgebung, dem Applikationsserver und den Profilern.
 
 \subsubsection{Smartphone-Umgebung}
 
@@ -296,13 +295,13 @@ Ebenso kann der Client explizit nach mehr Leistung fragen.
 
 Der Applikationsserver nutzt eine Virtualisierungsplattform und kann damit auf privaten sowie kommerziellen Clouds zum Einsatz kommen.
 Als Plattformen sind zum Beispiel Xen, QEMU und VirtualBox von Oracle zu nennen.
-Virtualisierung auf der Cloud hat gegenüber Smartphones den enormen Vorteil, dass Multitasking weitaus effizienter über Multiprozessoren oder über die Erweiterung zu mehreren virtuellen Maschinen ausgenutzt werden kann.
+Virtualisierung auf der Cloud hat gegenüber Smartphones den enormen Vorteil, dass Multitasking weitaus effizienter über Multiprozessoren und über die Erweiterung zu mehreren virtuellen Maschinen ausgenutzt werden kann.
 
 \subsubsection{Profiler}
 
-Das Profiler-System ist hochgradig modular um die Einbindung von neuen Profilern leicht zu ermöglichen.
+Das Profiler-System ist hochgradig modular um die Einbindung von neuen Profilern einfach zu ermöglichen.
 Aktuell besitzt ThinkAir vier Profiler (Hardware, Software, Netzwerk, Energie), die sich um das Sammeln von verschiedenen Daten kümmern.
-Insbesondere werden \texttt{Listener} mit dem System registriert, um eine Übersicht über die Akkulaufzeit, die Verbindungsstärke und dessen Technologie (Wifi, 3G, ...) zu erhalten.
+Insbesondere werden \texttt{Listener} mit dem System registriert, um Informationen über die Akkulaufzeit, die Verbindungsstärke und dessen Technologie (Wifi, 3G, ...) zu erhalten.
 Dadurch werden keine zusätzlichen Ressourcen für die Ermittlung dieser Daten benötigt.
 Die vier Profiler ermitteln unter anderem folgenden Daten:
 \begin{itemize}
@@ -346,8 +345,8 @@ Man erhält dadurch eine vereinfachte Trade-Off-Ungleichung~\cite{o8}:
 
 Nach~\cite{o8} läuft das Nokia N900 mit einer Geschwindigkeit $X_{\textit{lokal}}$ von 600MHz während einer Berechnung und verbraucht dabei 0.9W Leistung pro Sekunde $P_{\textit{lokal}}$.
 Studie~\cite{o12} verifiziert diese Ergebnisse.
-Damit ergibt sich nach $X_{\textit{lokal}}/P_{\textit{lokal}}$ ungefähr eine Anzahl von 650 Millionen Befehlen pro Joule.
-Nach einer Studie der Universität von Helsinki~\cite{o8} sendet und empfängt das Nokia N900 im WiFi bei einer Geschwindigkeit von 700kB/s ungefähr $B_s/P_s = $600kB pro Joule.
+Damit ergibt sich nach $X_{\textit{lokal}}/P_{\textit{lokal}}$ eine ungefähre Anzahl von 650 Millionen Befehlen pro Joule.
+Nach einer Studie der Universität von Helsinki~\cite{o8} sendet und empfängt das Nokia N900 im WiFi bei einer Geschwindigkeit von 700kB/s ungefähr $B_s/P_s = 600$kB pro Joule.
 Bei einer gedrosselten Verbindung von 100kB/s beträgt die Energieeffizienz 110kB/J.
 Ebenso wurde die Energieeffizienz beim Senden und Empfangen im 3G-Netzwerk an unterschiedlichen Standpunkten gemessen (nah und weit entfernt von der Basisstation)~\cite{o12}.
 Es zeigt sich, das die Energiekosten zum Übertragen weitaus höher sind als zum Empfangen und die Entfernung zur Basisstation einen signifikanten Unterschied im Bezug auf den Energieverbrauch ausmacht~\cite{o12}.
@@ -357,7 +356,7 @@ Das führt nach~\cite{o8} zu folgenden Entscheidungshilfen:
 \begin{enumerate}
 	\item Aufgaben mit keiner oder wenig Datenübertragung sollten immer ausgelagert werden
 	\item Aufgaben mit komplexen Berechnungen können ausgelagert werden
-	\item Aufgaben, die eine größere sekundäre Datenübertragung als die Übertragung zur Auslagerung benötigen, sollten ausgelagert werden
+	\item Aufgaben, die eine größere, sekundäre Datenübertragung als die Übertragung zur Auslagerung benötigen, sollten ausgelagert werden
 \end{enumerate}
 
 Für das Framework ThinkAir wird ebenso auch eine Evaluierung anhand von mehreren Szenarien unter drei verschiedenen Konnektivitäten (Lokal, WiFi und 3G) präsentiert~\cite{thinkair}.
@@ -377,14 +376,14 @@ Die Applikation zählt die Anzahl der Gesichter in einem Bild mit Hilfe der Andr
 Damit ist die Applikation hochgradig für Android optimiert und sollte daher relativ schnell auf dem Smartphone ihre Arbeit verrichten~\cite{thinkair}.
 Der Test wird mit einer variablen Anzahl von zu überprüfenden Fotos durchgeführt (1, 10 und 100).
 Dabei liegen die Fotos bereits auf dem Smartphone sowie auf der Cloud vor.
-Abbildung~\ref{fig:thinkair} präsentiert die Ergebnisse der Gesichtserkennung mit einer logarithmischen Skala.
+Abbildung~\ref{fig:thinkair} präsentiert die Ergebnisse der Gesichtserkennung auf einer logarithmischen Skala.
 Die Detektion eines einzelnen Bilds läuft auf dem Smartphone schneller und verbraucht dabei weniger Energie, als wenn die Aufgabe erst über WiFi oder 3G an die Cloud delegiert werden muss.
 Steigt die Anzahl der zu analysierenden Fotos, so zeigt sich die Cloud deutlich leistungsstärker und energieeffizienter.
 Die Bearbeitung von 100 Fotos verbraucht in der Cloud nur einen Bruchteil der ungefähr 1000J, die lokal zur Berechnung gebraucht würden~\cite{thinkair}.
-Der Unterschied zwischen den Übertragungstechnologien WiFi und 3G ist in diesem Beispiel zu vernachlässigen, da keine Daten an die Cloud übertragen werden müssen.
+Der Unterschied zwischen den Übertragungstechnologien WiFi und 3G ist in diesem Beispiel zu vernachlässigen, da keine Daten an die Cloud übermittelt werden müssen.
 
 \subsubsection{Virusscanner}
-Der Virusscanner ermittelt mittels einer lokalen beziehungsweise in der Cloud liegenden Datenbank mit 1000 enthaltenden Virussignaturen in einem Dateisystem die Anzahl der gefundenen Viren.
+Der Virusscanner ermittelt über einer lokalen beziehungsweise in der Cloud liegenden Datenbank mit 1000 enthaltenden Virussignaturen in einem Dateisystem die Anzahl der gefundenen Viren.
 Als Testszenario wurden 3500 Daten durchsucht mit einer Gesamtgröße von 10MB~\cite{thinkair}.
 Damit müssen im Gegensatz zur Gesichtserkennung in diesem Fall große Datenmengen an die Cloud ausgelagert werden.
 Es zeigt sich aber, dass sich die Auslagerung lohnt.
@@ -392,7 +391,7 @@ Die Ausführung auf dem Smartphone beträgt für den Scanvorgang über eine Stun
 Die Energieersparnis ist ebenso deutlich.
 Verbraucht das Smartphone bei lokaler Berechnung fast 3000 Joule, so werden für die Auslagerung nicht mehr als 70 Joule benötigt~\cite{thinkair}.
 Der Unterschied der Energiekosten bei der Übertragung zwischen WiFi und 3G ist erneut marginal.
-Es zeigt sich sogar im Gegensatz zu den Studien zum Nokia N900 (vgl.~\cite{o8, o12}), dass die Benutzung von WiFi weniger energieeffizient ist als von 3G~\cite{thinkair}.
+Es zeigt sich aber im Gegensatz zu den Studien zum Nokia N900 (vgl.~\cite{o8, o12}), dass die Benutzung von WiFi knapp weniger energieeffizient ist als von 3G~\cite{thinkair}.
 Ähnliche Ergebnisse zeigte auch die Gesichtserkennung.
 
 \section{Diskussion}
@@ -405,8 +404,7 @@ Wird der Netzwerkprozess eine Qual für den Benutzer, so werden sich diese höch
 Computation Offloading-Systeme benötigen sorgsame Planung, um sichtbar lange Latenzzeiten für den Benutzer zu vermeiden~\cite{o12}.
 Allerdings schmälern eine durchschnittliche gute Konnektivität von 85\% am Tag und die bereits gute dynamische Entscheidungsfindung der gegenwärtigen Offloading-Frameworks diesen Kritikpunkt~\cite{o2}.
 Computation Offloading ist in der heutigen Zeit keine utopische Vorstellung mehr.
-Die verbesserte und vermehrte Breitbandabdeckung mit Hilfe von 3G, 4G, Femtozellen und fester Drahtloskommunikation fördern die Bedingungen für Offloading~\cite{thoughtsoncloud}.
-Bereits 
+Die verbesserte und vermehrte Breitbandabdeckung mit Hilfe von 3G, 4G, Femtozellen und fester Draht\-los\-kom\-mu\-ni\-ka\-tion fördern die Bedingungen für Offloading~\cite{thoughtsoncloud}.
 
 Computation Offloading kann weiterhin zum \emph{Mobile Cloud Computing} erweitert werden.
 Mobile Cloud Computing bietet zusätzliche Leistungen zum bloßen, effizienteren Berechnen einer Aufgabe.
@@ -428,13 +426,13 @@ Private Daten werden möglicherweise an Server gesendet, über die der Benutzer 
 Der Benutzer sollte entscheiden können, ob er die Auslagerung der Berechnung auf diesen Daten befürwortet oder doch lieber lokal auf dem Smartphone laufen lassen will.
 Bei der heutigen Angst der ständigen Überwachung ist auch Sicherheit ein wichtiges Thema~\cite{o4}.
 Ein Dritter kann möglicherweise die Daten bei der Übertragung an die Cloud abfangen.
-Mit Hilfe von Kryptografie und dem Aufbau von sicheren Verbindungen kann diesem zwar entgegengewirkt werden, es mildert aber eventuell den Gewinn an Energie durch die Auslagerung.
+Mit Hilfe von Kryptografie und dem Aufbau von sicheren Verbindungen kann diesem zwar entgegengewirkt werden, es mindert aber den Gewinn an Energie durch die Auslagerung.
 Eine Ansammlung von Studien und Frameworks haben sich in der Vergangenheit bereits dem Thema Sicherheit beim Computation Offloading gewidmet (vgl.~\cite{o4}).
 
 Der Entwickler muss durch die Benutzung von Computation Offloading zusätzliche Kosten aufwenden.
 Rein aus energieeffizienten Gründen ist es verständlich, wenn Entwickler auf das Computation Offloading verzichten.
 So sollte neben dem Gewinn von Energieeinsparung ebenso der Gewinn an Performance beim Computation Offloading im Vordergrund stehen.
-Es scheint schwierig, Entwickler von der Idee des Computation Offloadings zu überzeugen, nur weil Benutzer nicht so gerne ihr Smartphone laden.
+Es scheint schwierig, Entwickler von der Idee des Computation Offloadings zu überzeugen, nur weil Benutzer nicht gerne ihr Smartphone laden.
 Ebenso müssen bei unterschiedlichen App-Versionen möglicherweise verschiedene Smartphone-Klone in der Cloud betrieben werden.
 
 In~\cite{thinkair} wird auch auf mögliche Schwächen im ThinkAir-Framework eingegangen.
@@ -444,7 +442,7 @@ So werden Daten, die nicht benutzt werden, und unveränderte Objekte, die bereit
 Allerdings produziert das Caching von Daten und das Überprüfen auf Veränderungen einen gewissen Mehraufwand, der die Trade-off-Ungleichung verschiebt~\cite{thinkair}.
 Daraufhin wird auch auf die Sicherheits-Problematik im ThinkAir-Framework eingegangen.
 Ein Vorschlag dafür ist ein Authentifizierungsmechanismus, um eine Verbindung über einen Shared-Secret-Service zu registrieren~\cite{thinkair}.
-Für die Übermittlung von privaten Daten, wie dem Standort oder den Profildaten des Benutzers, sollen diese vor Dritten in einer zukünftigen ThinkAir-Version über die \texttt{SecureRemotable}-Klasse abgesichert werden und dem Benutzer damit die Last abnehmen, sich um diese Angelegenheiten zu kümmern~\cite{thinkair}.
+Für die Übermittlung von privaten Daten, wie dem Standort oder den Profildaten des Benutzers, sollen diese vor Dritten in einer zukünftigen ThinkAir-Version über die \texttt{SecureRemotable}-Klasse abgesichert werden und dem Benutzer damit die Last abnehmen, sich um diese Angelegenheiten selbst zu kümmern~\cite{thinkair}.
 
 \section{Ausblick}
 
@@ -460,16 +458,16 @@ Ein weiteres spannendes Forschungsgebiet ist das Umverteilen von laufenden virtu
 
 Ebenso ist das Verlangen nach komplexeren Energie-Profilern auf dem Markt enorm gestiegen~\cite{o12}.
 Frameworks wie ThinkAir müssen sich auch heute noch mit Schätzungen vom Energieverbrauch einzelner Methoden zufriedengeben und implizieren somit natürlich eine gewisse Fehlertoleranz bei der Entscheidung zur Auslagerung~\cite{thinkair}.
-Ebenso können granularere Energie-Profiler Entwickler zu energieeffizienteren Applikationen motivieren.
-Energie-Bugs, welche unerwünschterweise viel Energie verbrauchen, können damit endlich ermittelt werden.
+Ebenso können feinkörnigere Energie-Profiler Entwickler zu energieeffizienteren Applikationen motivieren.
+Energie-Bugs, welche unerwünschterweise viel Energie verbrauchen, können damit besser ermittelt werden.
 
 Die zur Verfügung stehenden Ressourcen in der Cloud sind unvorstellbar und bieten Spielraum und Möglichkeiten für gänzlich neue und innovative Applikationen~\cite{o12}.
 Smartphone-Apps mit umfangreichen Berechnungen werden dadurch erst wirklich möglich.
 So wird zum Beispiel die Datenmenge auf Smartphones auf Grund von einer Anreicherung von Fotos und Videos immer komplexer.
-Es reicht nicht mehr aus, diese nur über einen Dateinamen, ein Datum und einen Pfad zu verwalten.
+Es reicht in der heutigen Zeit nicht mehr aus, diese nur über einen Dateinamen, ein Datum und einen Pfad zu verwalten.
 Ebenso wollen Benutzer aber nicht jede einzelne Datei über eine Menge von Schlüsselwörtern näher beschreiben.
 Das bietet enormen Raum und Wachstum für Erkennungs- und Datenverwaltungstechnologien, die auf Grund ihrer intensiven Berechnungen nur über Computation Offloading umsetzbar sind~\cite{o12}.
-Es wird spannend sein, zu sehen, welche neuen Applikationen über Computation Offloading und der Cloud realisierbar werden~\cite{o12}.
+Es wird spannend, zu sehen, welche neuen Applikationen über Computation Offloading und der Cloud realisierbar werden~\cite{o12}.
 
 \bibliographystyle{SIGCHI-Reference-Format}
 \bibliography{literatur}
