@@ -1,8 +1,8 @@
-#Energieeffizienz durch Computation Offloading in der Cloud
+# Energieeffizienz durch Computation Offloading in der Cloud
 
 Seminarbeit zum Thema "Apps and Energy"
 
-##Abstract
+## Abstract
 
 Die Popularität von Smartphones und dessen Applikationen ist innerhalb der letzten Jahre stark gestiegen.
 Immer komplexer werdende Programme wie Objekterkennung oder Videobearbeitung stehen mittlerweile auch mobil zur Verfügung.
